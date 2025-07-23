@@ -24,6 +24,13 @@ const popularTools = [
     color: "bg-purple-500"
   },
   {
+    name: "Image SEO Analyzer",
+    description: "Optimize images for SEO",
+    href: "/tools/image-seo",
+    icon: "IMG",
+    color: "bg-orange-500"
+  },
+  {
     name: "Page Speed Insights",
     description: "Performance analysis",
     href: "/tools/page-speed-insights",

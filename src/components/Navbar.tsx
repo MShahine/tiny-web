@@ -81,6 +81,12 @@ const tools = [
     description: "Preview content on social platforms",
     href: "/tools/social-media-preview",
     category: "Social Media"
+  },
+  {
+    name: "Image SEO Analyzer",
+    description: "Optimize images for better SEO performance",
+    href: "/tools/image-seo",
+    category: "SEO Analysis"
   }
 ];
 
