@@ -85,8 +85,8 @@ TinyWeb is a comprehensive, free-to-use SEO toolkit designed to help developers,
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/MShahine/tinyweb.git
-   cd tinyweb-tools
+   git clone https://github.com/MShahine/tiny-web.git
+   cd tiny-web
    ```
 
 2. **Install dependencies**
@@ -296,6 +296,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Built with ❤️ for the SEO community**
 
-[Website](https://tiny-web-nine.vercel.app/) • [Documentation](https://tiny-web-nine.vercel.app/docs) • [GitHub](https://github.com/MShahine/tinyweb)
+[Website](https://tiny-web-nine.vercel.app/) • [Documentation](https://tiny-web-nine.vercel.app/docs) • [GitHub](https://github.com/MShahine/tiny-web)
 
 </div>
