@@ -14,6 +14,11 @@ TinyWeb is a comprehensive, free-to-use SEO toolkit designed to help developers,
 
 **🔗 Live Demo:** [https://tiny-web-nine.vercel.app/](https://tiny-web-nine.vercel.app/)
 
+## Speed Insights Results
+
+![Desktop Results](./public/desktop.png "Desktop")
+![Phone Results](./public/phone.png "Phone")
+
 ## ✨ Features
 
 ### 🔍 **SEO Analysis Tools (14 Tools)**
