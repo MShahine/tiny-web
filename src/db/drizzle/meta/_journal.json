@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1753023092299,
+      "tag": "0000_material_red_ghost",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1753035454427,
+      "tag": "0001_chief_marvel_apes",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1753040704866,
+      "tag": "0002_zippy_manta",
+      "breakpoints": true
+    }
+  ]
+}

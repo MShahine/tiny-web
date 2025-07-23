@@ -1,0 +1,50 @@
+🚀 MANUAL DATABASE RESET - COPY & PASTE THESE COMMANDS
+
+Since bash has issues, run these commands directly in your terminal:
+
+=== STEP 1: DROP DATABASE ===
+npx drizzle-kit drop --config=drizzle.config.ts
+
+=== STEP 2: GENERATE NEW SCHEMA ===
+npx drizzle-kit generate --config=drizzle.config.ts
+
+=== STEP 3: PUSH TO DATABASE ===
+npx drizzle-kit push --config=drizzle.config.ts
+
+=== STEP 4: VERIFY SUCCESS ===
+npx drizzle-kit studio
+
+=== ALTERNATIVE IF ABOVE FAILS ===
+If you get foreign key errors, connect to MySQL directly and run:
+
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS sharing_metrics;
+DROP TABLE IF EXISTS feature_usage;
+DROP TABLE IF EXISTS performance_metrics;
+DROP TABLE IF EXISTS user_behavior;
+DROP TABLE IF EXISTS popular_urls;
+DROP TABLE IF EXISTS realtime_analytics;
+DROP TABLE IF EXISTS daily_analytics;
+DROP TABLE IF EXISTS serp_rankings;
+DROP TABLE IF EXISTS analysis_results;
+DROP TABLE IF EXISTS users;
+SET FOREIGN_KEY_CHECKS = 1;
+
+Then run: npx drizzle-kit push --config=drizzle.config.ts
+
+=== SUCCESS CHECK ===
+You should see these 8 tables created:
+✅ analysis_results
+✅ daily_analytics
+✅ realtime_analytics
+✅ popular_urls
+✅ user_behavior
+✅ performance_metrics
+✅ serp_rankings
+✅ users
+
+=== NEXT STEPS ===
+1. npm run dev
+2. Visit: http://localhost:3000/admin/analytics
+3. Test tools to generate analytics data
+4. Watch the magic happen! 🔥
