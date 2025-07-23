@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useReducer } from 'react'
+import { track as vercelTrack } from '@vercel/analytics'
 
 interface AnalyticsEvent {
   action: 'tool_start' | 'tool_complete' | 'tool_error' | 'export' | 'share'
@@ -27,6 +28,7 @@ export function useAnalytics() {
     console.log('useAnalytics: Tracking event', event)
 
     try {
+      // Track to internal analytics system
       const response = await fetch('/api/analytics/track', {
         method: 'POST',
         headers: {
@@ -52,6 +54,15 @@ export function useAnalytics() {
 
       const result = await response.json()
       console.log('useAnalytics: API response', result)
+
+      // Also track to Vercel Analytics
+      vercelTrack(`${event.action}_${event.tool}`, {
+        tool: event.tool,
+        action: event.action,
+        duration: event.duration,
+        success: event.action !== 'tool_error',
+        ...(event.metadata || {})
+      })
 
     } catch (error) {
       console.error('Failed to track analytics event:', error)

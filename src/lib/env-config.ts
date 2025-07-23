@@ -18,6 +18,20 @@ export const envConfig = {
     yahooVerification: process.env.NEXT_PUBLIC_YAHOO_VERIFICATION || 'your-yahoo-verification-code',
   },
 
+  // Analytics
+  analytics: {
+    vercel: {
+      enabled: process.env.NEXT_PUBLIC_VERCEL_ANALYTICS === 'true' || process.env.NODE_ENV === 'production',
+      debug: process.env.NODE_ENV === 'development',
+    },
+    speedInsights: {
+      enabled: process.env.NEXT_PUBLIC_VERCEL_SPEED_INSIGHTS === 'true' || process.env.NODE_ENV === 'production',
+    },
+    internal: {
+      enabled: process.env.NEXT_PUBLIC_INTERNAL_ANALYTICS !== 'false',
+    },
+  },
+
   // Social Media
   social: {
     twitter: process.env.NEXT_PUBLIC_TWITTER_HANDLE || '@tinyweb_tools',

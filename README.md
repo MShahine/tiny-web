@@ -66,6 +66,13 @@ TinyWeb is a comprehensive, free-to-use SEO toolkit designed to help developers,
 - **MySQL2** - Database connectivity
 - **Rate Limiting** - Request throttling and protection
 
+### **Analytics & Monitoring**
+
+- **Vercel Analytics** - Real-time user analytics and insights
+- **Vercel Speed Insights** - Core Web Vitals monitoring
+- **Internal Analytics** - Custom tool usage tracking
+- **Performance Monitoring** - Response time and error tracking
+
 ### **Development & Deployment**
 
 - **ESLint** - Code linting and quality
@@ -118,6 +125,10 @@ TinyWeb is a comprehensive, free-to-use SEO toolkit designed to help developers,
    # API Keys (optional)
    PAGESPEED_API_KEY="your-pagespeed-api-key"
    SERP_API_KEY="your-serp-api-key"
+   
+   # Analytics (automatically enabled in production)
+   NEXT_PUBLIC_VERCEL_ANALYTICS="true"
+   NEXT_PUBLIC_VERCEL_SPEED_INSIGHTS="true"
    ```
 
 4. **Database Setup**

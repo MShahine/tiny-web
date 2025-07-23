@@ -5,6 +5,8 @@ import { Footer } from "@/components/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { WebsiteSchema, SoftwareApplicationSchema } from "@/components/StructuredData";
 import { envConfig } from "@/lib/env-config";
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import localFont from 'next/font/local'
 
 // Define your custom font - replace with your actual font file names
@@ -137,6 +139,8 @@ export const metadata: Metadata = {
             </main>
             <Footer />
           </div>
+          <Analytics />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
