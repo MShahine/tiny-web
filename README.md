@@ -125,7 +125,7 @@ TinyWeb is a comprehensive, free-to-use SEO toolkit designed to help developers,
    # API Keys (optional)
    PAGESPEED_API_KEY="your-pagespeed-api-key"
    SERP_API_KEY="your-serp-api-key"
-   
+
    # Analytics (automatically enabled in production)
    NEXT_PUBLIC_VERCEL_ANALYTICS="true"
    NEXT_PUBLIC_VERCEL_SPEED_INSIGHTS="true"
@@ -279,7 +279,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### **Special Thanks**
 
-- **Rovo Dev (Claude)** - AI assistant who provided invaluable help in developing this project, from architecture decisions to implementation details. This toolkit wouldn't be what it is today without the collaborative development process and technical expertise provided throughout the journey.
+- **Rovo Dev (ATLASSIAN AI )** - AI assistant who provided invaluable help in developing this project, from architecture decisions to implementation details. This toolkit wouldn't be what it is today without the collaborative development process and technical expertise provided throughout the journey.
 
 ### **Technologies & Libraries**
 
