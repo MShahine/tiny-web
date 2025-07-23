@@ -32,6 +32,7 @@ export const RATE_LIMITS: Record<string, RateLimitConfig> = {
   'tech-checker': { windowMs: 60 * 1000, maxRequests: 8 }, // 8 per minute
   'link-extractor': { windowMs: 60 * 1000, maxRequests: 5 }, // 5 per minute
   'social-media-preview': { windowMs: 60 * 1000, maxRequests: 10 }, // 10 per minute (single page analysis)
+  'schema-markup': { windowMs: 60 * 1000, maxRequests: 15 }, // 15 per minute (schema validation)
   default: { windowMs: 60 * 1000, maxRequests: 10 }, // Default fallback
 };
 

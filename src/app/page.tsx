@@ -87,6 +87,13 @@ const tools = [
     icon: "SP",
   },
   {
+    name: "Schema Markup Validator",
+    description: "Validate structured data and check rich snippet eligibility",
+    href: "/tools/schema-markup",
+    status: "ready",
+    icon: "SM",
+  },
+  {
     name: "Keyword Density Analyzer",
     description: "Analyze keyword frequency, density, and get SEO optimization recommendations",
     href: "/tools/keyword-density",

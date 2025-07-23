@@ -74,6 +74,12 @@ export const seoConfig = {
       description: 'Generate and optimize social media previews for all platforms. Preview how your content appears on Facebook, Twitter, LinkedIn, and more. Free social preview tool.',
       keywords: ['social media preview', 'social sharing preview', 'facebook preview', 'twitter preview', 'linkedin preview', 'social optimization'],
       features: ['Multi-platform preview', 'Social optimization', 'Sharing analysis', 'Preview generation', 'Social media SEO', 'Platform compatibility']
+    },
+    'schema-markup': {
+      title: 'Free Schema Markup Validator - Structured Data Testing & Rich Snippets Checker',
+      description: 'Validate schema markup and structured data on any website. Check JSON-LD, Microdata, RDFa for rich snippet eligibility. Free schema validator with detailed error reporting.',
+      keywords: ['schema markup validator', 'structured data testing', 'JSON-LD validator', 'rich snippets checker', 'microdata validator', 'schema.org testing'],
+      features: ['JSON-LD validation', 'Microdata detection', 'Rich snippet check', 'Error reporting', 'SEO scoring', 'Schema optimization']
     }
   }
 }

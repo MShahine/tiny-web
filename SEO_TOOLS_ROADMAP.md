@@ -1,6 +1,6 @@
 # SEO Tools Roadmap & Progress Tracker
 
-## ✅ Completed Tools (12/12)
+## ✅ Completed Tools (13/13)
 
 ### Content & Meta Analysis
 - [x] **Meta Tags Analyzer** (`/tools/meta-tags`)
@@ -91,11 +91,12 @@
   - Complex word analysis
   - Reading time estimation
 
-- [ ] **Schema Markup Validator**
+- [x] **Schema Markup Validator** (`/tools/schema-markup`)
   - Structured data detection and validation
-  - Rich snippets preview
+  - Rich snippets eligibility check
   - JSON-LD, Microdata, RDFa support
-  - Google's structured data testing
+  - Error and warning reporting
+  - SEO score calculation
 
 - [ ] **Broken Link Checker**
   - Internal and external link validation

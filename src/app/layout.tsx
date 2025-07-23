@@ -5,6 +5,22 @@ import { Footer } from "@/components/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { WebsiteSchema, SoftwareApplicationSchema } from "@/components/StructuredData";
 import { envConfig } from "@/lib/env-config";
+import localFont from 'next/font/local'
+
+// Define your custom font - replace with your actual font file names
+const Operator = localFont({
+  src: [
+    {
+      path: './../../public/fonts/OperatorMonoLig-Book.otf',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-custom',
+  display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'arial'],
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(envConfig.site.url),
@@ -91,7 +107,8 @@ export const metadata: Metadata = {
   referrer: 'origin-when-cross-origin',
 };
 
-export default function RootLayout({
+
+  export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -106,7 +123,7 @@ export default function RootLayout({
         <meta name="msvalidate.01" content={envConfig.seo.bingVerification} />
         <meta name="yandex-verification" content={envConfig.seo.yandexVerification} />
       </head>
-      <body className="antialiased">
+      <body className={`antialiased ${Operator.className}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

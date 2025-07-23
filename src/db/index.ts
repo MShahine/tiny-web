@@ -23,12 +23,12 @@ function createDatabaseConnection() {
   const poolConnection = mysql.createPool({
     uri: process.env.DATABASE_URL!,
     connectionLimit: 10,
-    acquireTimeout: 60000,
     timeout: 60000,
     reconnect: true,
     idleTimeout: 300000,
     enableKeepAlive: true,
-    keepAliveInitialDelay: 0
+    keepAliveInitialDelay: 0,
+    queueLimit: 0
   });
   return drizzle(poolConnection);
 }
