@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import ExportButton from '@/components/ui/ExportButton';
@@ -73,7 +73,7 @@ interface PerformanceResult {
   analyzedAt?: string;
 }
 
-export default function PageSpeedInsights() {
+function PageSpeedInsightsContent() {
   const [url, setUrl] = useState('');
   const [device, setDevice] = useState<'desktop' | 'mobile'>('desktop');
   const [loading, setLoading] = useState(false);
@@ -583,5 +583,13 @@ export default function PageSpeedInsights() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function PageSpeedInsights() {
+  return (
+    <Suspense fallback={<div className="container mx-auto px-4 py-8">Loading...</div>}>
+      <PageSpeedInsightsContent />
+    </Suspense>
   );
 }

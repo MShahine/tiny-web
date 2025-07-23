@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 interface OpenGraphResult {
@@ -33,7 +33,7 @@ interface OpenGraphResult {
   analyzedAt?: string;
 }
 
-export default function OpenGraphTool() {
+function OpenGraphToolContent() {
   const [url, setUrl] = useState('');
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<OpenGraphResult | null>(null);
@@ -242,5 +242,13 @@ export default function OpenGraphTool() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function OpenGraphTool() {
+  return (
+    <Suspense fallback={<div className="container mx-auto px-4 py-8">Loading...</div>}>
+      <OpenGraphToolContent />
+    </Suspense>
   );
 }

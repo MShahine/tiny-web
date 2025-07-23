@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import ExportButton from '@/components/ui/ExportButton';
@@ -80,7 +80,7 @@ interface CrawlResult {
   analyzedAt?: string;
 }
 
-export default function WebsiteCrawlTest() {
+function WebsiteCrawlTestContent() {
   const [url, setUrl] = useState('');
   const [maxPages, setMaxPages] = useState(50);
   const [maxDepth, setMaxDepth] = useState(3);
@@ -628,5 +628,13 @@ export default function WebsiteCrawlTest() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function WebsiteCrawlTest() {
+  return (
+    <Suspense fallback={<div className="container mx-auto px-4 py-8">Loading...</div>}>
+      <WebsiteCrawlTestContent />
+    </Suspense>
   );
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { useAnalytics } from '@/hooks/useAnalytics';
@@ -65,7 +65,7 @@ interface KeywordResult {
   analyzedAt?: string;
 }
 
-export default function KeywordDensityAnalyzer() {
+function KeywordDensityAnalyzerContent() {
   const [url, setUrl] = useState('');
   const [targetKeyword, setTargetKeyword] = useState('');
   const [result, setResult] = useState<KeywordResult | null>(null);
@@ -534,5 +534,13 @@ export default function KeywordDensityAnalyzer() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function KeywordDensityAnalyzer() {
+  return (
+    <Suspense fallback={<div className="container mx-auto px-4 py-8">Loading...</div>}>
+      <KeywordDensityAnalyzerContent />
+    </Suspense>
   );
 }

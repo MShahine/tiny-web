@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import ExportButton from '@/components/ui/ExportButton';
@@ -38,7 +38,7 @@ interface RobotsResult {
   analyzedAt?: string;
 }
 
-export default function RobotsTxtTester() {
+function RobotsTxtTesterContent() {
   const [url, setUrl] = useState('');
   const [testUrl, setTestUrl] = useState('');
   const [loading, setLoading] = useState(false);
@@ -440,5 +440,13 @@ export default function RobotsTxtTester() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function RobotsTxtTester() {
+  return (
+    <Suspense fallback={<div className="container mx-auto px-4 py-8">Loading...</div>}>
+      <RobotsTxtTesterContent />
+    </Suspense>
   );
 }

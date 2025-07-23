@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import ExportButton from '@/components/ui/ExportButton';
@@ -90,7 +90,7 @@ interface SocialResult {
   analyzedAt?: string;
 }
 
-export default function SocialMediaPreview() {
+function SocialMediaPreviewContent() {
   const [url, setUrl] = useState('');
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<SocialResult | null>(null);
@@ -656,5 +656,13 @@ export default function SocialMediaPreview() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function SocialMediaPreview() {
+  return (
+    <Suspense fallback={<div className="container mx-auto px-4 py-8">Loading...</div>}>
+      <SocialMediaPreviewContent />
+    </Suspense>
   );
 }

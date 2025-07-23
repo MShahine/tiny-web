@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { useAnalytics } from '@/hooks/useAnalytics';
@@ -51,7 +51,7 @@ interface MetaTagsResult {
   analyzedAt?: string;
 }
 
-export default function MetaTagsChecker() {
+function MetaTagsCheckerContent() {
   const [url, setUrl] = useState('');
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<MetaTagsResult | null>(null);
@@ -430,5 +430,13 @@ export default function MetaTagsChecker() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function MetaTagsChecker() {
+  return (
+    <Suspense fallback={<div className="container mx-auto px-4 py-8">Loading...</div>}>
+      <MetaTagsCheckerContent />
+    </Suspense>
   );
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import ExportButton from '@/components/ui/ExportButton';
@@ -40,7 +40,7 @@ interface SerpResult {
   analyzedAt?: string;
 }
 
-export default function SerpChecker() {
+function SerpCheckerContent() {
   const [keyword, setKeyword] = useState('');
   const [targetUrl, setTargetUrl] = useState('');
   const [searchEngine, setSearchEngine] = useState('google');
@@ -490,5 +490,13 @@ export default function SerpChecker() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function SerpChecker() {
+  return (
+    <Suspense fallback={<div className="container mx-auto px-4 py-8">Loading...</div>}>
+      <SerpCheckerContent />
+    </Suspense>
   );
 }
